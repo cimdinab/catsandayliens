@@ -2,6 +2,16 @@ html {
     font-family: sans-serif;
 }
 
+::selection {
+    background: #f1f1f1;
+    color: #f1f1f1; /* WebKit/Blink Browsers */
+  }
+
+::-moz-selection {
+    background: #f1f1f1;
+    color: #f1f1f1; /* Gecko Browsers */
+}
+
 body {
     background-color: #818181;
     background-image: url(black-cat-pattern.jpg);

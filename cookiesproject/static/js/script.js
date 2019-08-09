@@ -225,7 +225,7 @@ $(document).on('click', '.get-apod', function () {
     $("#space-copyright").text("");
     $("#hd-url").text("");
     $("#hd-url").attr('href', 'javascript:void(0)');
-    var space = "http://localhost:8000/cookiesapp/space/";
+    var space = "http://" + location.host + "/cookiesapp/space/";
     var spaceDate = $('#space-date').val();
     if(spaceDate<"1995-06-20" || spaceDate>setMaxDate()){
         spaceDate=setMaxDate();

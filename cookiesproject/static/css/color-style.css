@@ -2,6 +2,14 @@ html {
     font-family: sans-serif;
 }
 
+::selection {
+    background: #ffba66; /* WebKit/Blink Browsers */
+  }
+
+::-moz-selection {
+    background: #ffba66; /* Gecko Browsers */
+}
+
 body {
     background-color: antiquewhite;
     background-image: url(color-cat-pattern.jpg);

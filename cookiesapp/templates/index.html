@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Cats and Space</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static '\css\dark-style.css' %}" title="dark-theme" id="dark" rel="stylesheet" disabled>
+    <link href="{% static '\css\light-style.css' %}" title="light-theme" id="light" rel="stylesheet" disabled>
+    <link href="{% static '\css\color-style.css' %}" title="color-theme" id="color" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
+    <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+    <script src="{% static '\js\script.js' %}"></script>
+    <link rel="icon" href="{% static 'favicon.ico' %}" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+</head>
+
+<body onload="checkCookie()" ;>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h2>Choose theme:</h2>
+        <label class="container" onclick="switch_style_dark();">Dark
+            <input type="radio" name="theme-btn" id="dark-btn" value="dark-theme">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container" onclick="switch_style_light();">Light
+            <input type="radio" name="theme-btn" id="light-btn" value="light-theme">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container" onclick="switch_style_color();">Color
+            <input type="radio" checked="checked" name="theme-btn" id="color-btn" value="color-theme">
+            <span class="checkmark"></span>
+        </label>
+        <h3>Enter a number: </h3>
+        <div id="user-number-container">
+            <input id="user-number" type="number" name="user-number" min="-2147483648" max="2147483647" value="0">
+        </div>
+        <button class="savebtn" onclick="saveNav()">Save Settings</button>
+    </div>
+
+    <div id="main">
+        <ul class="topnav">
+            <li class="topli"><a class="topa active" id="cats-link" href="javascript:void(0)">Cats</a></li>
+            <li class="topli"><a class="topa" id="space-link" href="javascript:void(0)">Space</a></li>
+            <!-- <li class="topli"><a class="topa" href="javascript:void(0)">Contact</a></li>
+            <li class="topli"><a class="topa" href="javascript:void(0)">About</a></li> -->
+            <li><a href="javascript:void(0)" onclick="openNav()">Settings</a></li>
+        </ul>
+
+        <div class="cats-content" id="main-content">
+            <div class="left-container">
+                <h1 id="cat-name"></h1>
+                <p id="cat-text"></p>
+                <div id="options-container">
+                    <div id="breed-select-container">
+                        <p id="breed-select-text">Select a breed:</p>
+                        <select id="breed-select" name="breed">
+                            <option id="random-cat" value="" selected>Random cat</option>
+                        </select>
+                    </div>
+                    <div id="btns-container-desc">
+                        <div id="btns-container">
+                            <button class="generate-cat cat-btns-style" id="another-cat-btn">Another ⟳</button>
+                            <button class="save-cat-pic cat-btns-style" id="save-img-btn">Save Cat Picture</button>
+                        </div>
+                        <button class="save-cat-desc cat-btns-style" id="save-desc-btn">Save Breed Description</button>
+                    </div>
+                    <h5 id="saved-to-db"></h5>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="img-right">
+                    <img class="right" id="cat-pic" src="https://cdn2.thecatapi.com/images/drf.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="space-content" id="main-content">
+            <div class="left-container">
+                <h1 id="space-title">NASA API + Aylien Text Analysis API</h1>
+                <p id="space-text">NASA Astronomy Picture of the Day with auto-generated hashtags. #NASA #Aylien</p>
+                <p id="space-copyright">Choose a date and click the button to get a picture.</p>
+                <a id="hd-url" href="javascript:void(0)"></a>
+                <div id="options-container">
+                    <div id="btns-container-desc">
+                        <div id="date-select-container">
+                            <input type="date" id="space-date" value="2019-08-08" min="1995-06-20" max="2019-01-01">
+                        </div>
+                    <button class="get-apod cat-btns-style" id="get-apod-btn">Get Astronomy Picture of the Day ⟳</button>
+                    </div>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="img-right">
+                    <img class="right" id="space-pic" src="https://cdn2.thecatapi.com/images/drf.jpg">
+                    <iframe width="960" height="540" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" class="right" id="space-video" src=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#eb6c44",
+                    "text": "#ffffff"
+                },
+                "button": {
+                    "background": "#f5d948"
+                }
+            },
+            "theme": "classic"
+        });
+    </script>
+</body>
+
+</html>

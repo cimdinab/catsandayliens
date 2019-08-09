@@ -1,0 +1,430 @@
+html {
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f1f1f1;
+    background-image: url(white-cat-pattern.jpg);
+    margin: 0;
+}
+
+#main-content {
+    margin: 0;
+    position: absolute;
+    top: 53%;
+    height: 80%;
+    width: 100%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    flex-direction: row;
+    justify-content: center;
+    background: rgba(241, 241, 241, 0.90);
+    transition: margin-right .5s;
+}
+
+.space-content {
+    display: none;
+}
+
+.cats-content {
+    display: initial;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #818181;
+}
+
+ul.topnav li {
+    float: left;
+    border-right: 1px solid #818181;
+}
+
+ul.topnav li:last-child {
+    border-right: none;
+    float: right;
+}
+
+ul.topnav li a {
+    display: block;
+    color: #111;
+    text-align: center;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    font-size: 2vmin;
+}
+
+ul.topnav li a:hover:not(.active) {
+    background-color: #818181;
+    color: #111
+}
+
+ul.topnav li .active {
+    background-color: #111;
+    color: #f1f1f1;
+}
+
+.left-container {
+    width: 50%;
+    height: -webkit-fill-available;
+    float: left;
+}
+
+h1 {
+    color: #111;
+    font-size: 7vmin;
+    opacity: 1;
+    padding-left: 3vw;
+    padding-right: 5vw;
+}
+
+p {
+    color: #111;
+    font-size: 3vmin;
+    opacity: 1;
+    padding-left: 3vw;
+    padding-right: 5vw;
+}
+
+#space-title {
+    font-size: 5vmin;
+}
+
+#space-text {
+    font-size: 2vmin;
+}
+
+#space-copyright {
+    font-size: 2vmin;
+}
+
+#hd-url {
+    color: #111;
+    font-size: 2vmin;
+    opacity: 1;
+    padding-left: 3vw;
+    padding-right: 5vw;
+}
+
+#space-pic {
+    display: initial;
+}
+
+#space-video {
+    display: none;
+}
+
+#options-container {
+    flex-direction: column;
+    align-content: flex-end;
+}
+
+#breed-select-container {
+    position: absolute;
+    left: 3vw;
+    bottom: 8vw;
+}
+
+#breed-select {
+    font-size: 2vmin;
+    padding: 0.5em;
+    margin: 1em;
+}
+
+#breed-select-text {
+    padding: unset;
+    float: left;
+}
+
+.cat-btns-style {
+    font-size: 2vmin;
+    padding: 1em;
+    background-color: transparent;
+    color: #111;
+    border: 2px solid #111;
+    cursor: pointer;
+    margin-right: 1em;
+}
+
+#btns-container-desc {
+    display: flex;
+    position: absolute;
+    left: 3vw;
+    bottom: 3vw;
+    width: 40%;
+    justify-content: flex-start;
+}
+
+#btns-container {
+    justify-content: space-between;
+    display: flex;
+}
+
+#another-cat-btn:hover {
+    background-color: #111;
+    color: #f1f1f1;
+}
+
+#another-cat-btn:focus {
+    outline: 0;
+}
+
+#save-img-btn:hover {
+    background-color: #111;
+    color: #f1f1f1;
+}
+
+#save-img-btn:focus {
+    outline: 0;
+}
+
+#save-desc-btn {
+    display: none;
+    position: relative;
+}
+
+#save-desc-btn:hover {
+    background-color: #111;
+    color: #f1f1f1;
+}
+
+#save-desc-btn:focus {
+    outline: 0;
+}
+
+#get-apod-btn:hover {
+    background-color: #111;
+    color: #f1f1f1;
+}
+
+#get-apod-btn:focus {
+    outline: 0;
+}
+
+#saved-to-db {
+    position: absolute;
+    left: 3vw;
+    bottom: 0;
+    font-size: 1.5vmin;
+    color: #111;
+}
+
+.right-container {
+    max-width: -webkit-fill-available;
+    height: 100%;
+    display: flex;
+}
+
+.img-right {
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+    align-self: center;
+}
+
+.right {
+    padding-right: 1em;
+    max-width: -webkit-fill-available;
+    max-height: -webkit-fill-available;
+    min-height: 300px;
+    min-width: 250px;
+  }
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav h2 {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* The container */
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #818181;
+}
+
+/* Hide the browser's default radio button */
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 32px;
+    height: 25px;
+    width: 25px;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+
+.container:hover {
+    color: #f1f1f1;
+}
+
+/* When the radio button is checked, add a grey background */
+
+.container input:checked~.checkmark {
+    background-color: #818181;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+
+.container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    padding: 8px 8px 8px 32px;
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #818181;
+    transition: 0.3s;
+}
+
+#main {
+    transition: margin-right .5s;
+}
+
+#user-number-container {
+    padding-left: 32px;
+}
+
+input[type=number] {
+    font-size: 16px;
+    padding: 10px;
+    background-color: #818181;
+    border: 1px solid #f1f1f1
+}
+
+input[type=number]:focus {
+    background-color: #f1f1f1;
+    border: 1px solid #818181;
+}
+
+input[type="date"] {
+    appearance: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    border: 2px solid black;
+    background: transparent;
+    font-size: 2vmin;
+    padding: 1em;
+    margin-right: 1em;
+    width: 11em;
+}
+  
+input[type="date"]::-webkit-datetime-edit-text { padding: 0.2rem; }
+input[type="date"]::-webkit-datetime-edit-day-field { text-transform: uppercase; }
+input[type="date"]::-webkit-datetime-edit-year-field { text-transform: uppercase; }
+input[type="date"]::-webkit-clear-button { display: none; }
+input[type="date"]::-webkit-inner-spin-button { display: none; }
+input[type="date"]::-webkit-calendar-picker-indicator { background: transparent;}
+
+.sidenav h3 {
+    padding: 16px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav .savebtn {
+    background-color: #818181;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    cursor: pointer;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 60px;
+}
+
+.sidenav .savebtn:hover {
+    background-color: #f1f1f1;
+    color: #818181;
+}
+
+@media screen and (max-width: 600px) {
+    ul.topnav li.right, ul.topnav li, ul.topnav li:last-child {
+        float: none;
+    }
+    #main-content {
+        position: unset;
+        top: unset;
+        -ms-transform: unset;
+        transform: unset;
+        justify-content: space-evenly;
+    }
+    h1 {
+        font-size: 10vmax;
+    }
+    p {
+        font-size: 3vmax;
+    }
+}
